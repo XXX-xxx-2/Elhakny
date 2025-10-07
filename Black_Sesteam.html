@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تقديم - شركة اسود</title>
+  <style>
+    :root{--bg:#0b0b0d;--card:#0f1720;--accent:#ffb703;--muted:#9ca3af}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial; background:linear-gradient(180deg,#050507 0%, #0d0f14 60%);color:#e6eef8}
+    .center{display:flex;align-items:center;justify-content:center}
+    /* intro */
+    .splash{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(ellipse at center, rgba(255,183,3,0.06), transparent 25%), linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.85));backdrop-filter: blur(2px)}
+    .logo{font-weight:900;letter-spacing:2px;font-size:54px;display:flex;align-items:center;gap:14px}
+    .logo .mark{width:90px;height:90px;border-radius:22px;background:linear-gradient(135deg,#111827,#0b1220);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,0.6), inset 0 -6px 20px rgba(255,183,3,0.03)}
+    .logo .mark svg{width:58px;height:58px}
+    .tag{margin-top:14px;color:var(--muted);font-size:15px}
+    .enter-btn{margin-top:28px;padding:12px 26px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ff8a00);color:#071029;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(255,147,41,0.12);transform-origin:center;}
+    .enter-btn:hover{transform:translateY(-3px)}
+    /* main layout */
+    .container{max-width:980px;margin:110px auto 80px;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    h1{margin:6px 0 4px;font-size:28px}
+    p.lead{color:var(--muted);margin-top:0}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:rgba(12,17,23,0.6);color:inherit;font-size:15px}
+    textarea{resize:vertical;min-height:120px}
+    .full{grid-column:1/-1}
+    .actions{display:flex;gap:10px;justify-content:flex-start;margin-top:8px}
+    .btn{padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#071029;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .success{padding:12px;border-radius:10px;background:linear-gradient(90deg,#0f381f,#071e12);color:#bff0c6;margin-top:12px}
+    /* small */
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:760px){form{grid-template-columns:1fr} .logo{font-size:46px} .logo .mark{width:74px;height:74px}}
+  </style>
+</head>
+<body>
+  <div class="splash" id="splash">
+    <div class="logo">
+      <div class="mark" aria-hidden>
+        <!-- simple lion / asym logo -->
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 6c6 0 10 4 12 8 3 6 1 12-1 16-2 4-6 8-11 8s-9-4-11-8c-2-4-4-10-1-16 2-4 6-8 12-8z" fill="#FFB703" opacity="0.95"/>
+          <circle cx="32" cy="32" r="4" fill="#071029" />
+        </svg>
+      </div>
+      <div style="text-align:left">
+        <div style="font-size:32px">أسود</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">البرمجيات · الأمن السيبراني · التصميم</div>
+      </div>
+    </div>
+    <div class="tag">تقديم للعمل في اسود</div>
+    <button class="enter-btn" id="enter">ادخل إلى صفحة التقديم</button>
+  </div>
+
+  <main class="container" id="main" style="display:none">
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <h1>قدّم الآن لشــركة أســود</h1>
+        <p class="lead">املأ النموذج أدناه وسنتواصل معك عبر تليجرام. موقعنا يعمل بدون سيرفر يفتح تليجرام مع رسالة جاهزة تُرسل مباشرة إلى حساب الشركة أو يمكنك اختيارنا من جهة اتصال.</p>
+      </div>
+      <div style="text-align:left">
+        <div class="small">تواصل : <code>@Vp_xv</code></div>
+      </div>
+    </header>
+
+    <form id="applyForm">
+      <div>
+        <label>ما هو تخصصك؟</label>
+        <select id="role" required>
+          <option value="">اختر التخصص</option>
+          <option>تصميم</option>
+          <option>ادارة</option>
+          <option>برمجة</option>
+          <option>سايبر سيكيورتي</option>
+        </select>
+      </div>
+
+      <div>
+        <label>الاسم الكامل</label>
+        <input id="name" placeholder="اسمك" required />
+      </div>
+
+      <div>
+        <label>سنة الميلاد</label>
+        <input id="year" placeholder="مثل 1994" pattern="\d{4}" />
+      </div>
+
+      <div>
+        <label>البلد / العنوان (اختياري)</label>
+        <input id="address" placeholder="المدينة، الدولة (اختياري)" />
+      </div>
+
+      <div>
+        <label>الهاتف (اختياري)</label>
+        <input id="phone" placeholder="+20 1xxxxxxxxx" />
+      </div>
+
+      <div>
+        <label>كم لغة تتحدث؟</label>
+        <input id="langsCount" type="number" min="0" max="10" value="1" />
+      </div>
+
+      <div class="full" id="langsBox">
+        <label>اللغات (ضع كل لغة مفصولة بفاصلة)</label>
+        <input id="langs" placeholder="العربية, English, Français" />
+      </div>
+
+      <div class="full">
+        <label>حساب تليجرام (مطلوب)</label>
+        <input id="telegram" placeholder="@username أو رقم مع كود الدولة" required />
+      </div>
+
+      <div class="full">
+        <labelم>ملاحظات إضافية</label>
+        <textarea id="notes" placeholder="اكتب أي معلومات إضافية"></textarea>
+      </div>
+
+      <div class="full actions">
+        <button type="button" class="btn primary" id="sendBtn">إرسال الطلب</button>
+        <button type="button" class="btn ghost" id="downloadBtn">تحميل نسخة من بياناتك</button>
+      </div>
+
+      <div class="full" id="result"></div>
+    </form>
+
+    <footer>©  <strong>أسود</strong> موقع شركة اسود الرسمي للبرمجيات . نسعى لشباب اكثر علما</footer>
+  </main>
+
+  <!-- LZ-String (compressToEncodedURIComponent) - small utility -->
+  <script>
+  /* LZ-String, simplified: compressToEncodedURIComponent / decompressFromEncodedURIComponent */
+  var LZString=(function(){function o(o){if(!o)return"";var e=n(o);return encodeURIComponent(e)}function n(o){if(null==o)return"";var n,r,t,i,s=0,u=0,c="",a=[];for(r=0;r<o.length;r+=1){n=o.charCodeAt(r);a.push(n>>8),a.push(n&255)}for(r=0;r<a.length;r+=1){c+=String.fromCharCode(a[r])}return encodeURIComponent(c)}
+  return{compressToEncodedURIComponent:o,decompressFromEncodedURIComponent:function(o){if(!o)return"";try{var e=decodeURIComponent(o);var a=[];for(var r=0;r<e.length;r++){a.push(e.charCodeAt(r))}var s="";for(var t=0;t<a.length;t+=2){var h=(a[t]<<8)|a[t+1];s+=String.fromCharCode(h)}return s}catch(err){return null}}}})();
+  </script>
+
+  <script>
+    // --- CONFIG ---
+    // ضع هنا اسم مستخدم التليجرام الخاص بالشركة (بدون @). إذا تركته فارغاً سيطلب من المرسل اختيار جهة اتصال في تليجرام.
+    const COMPANY_TG_USERNAME = ""; // <--- عيّن هذا
+
+    // --- UI ---
+    const splash = document.getElementById('splash');
+    const enter = document.getElementById('enter');
+    const main = document.getElementById('main');
+    const sendBtn = document.getElementById('sendBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const result = document.getElementById('result');
+
+    enter.addEventListener('click', ()=>{
+      // simple intro animation
+      splash.style.transition = 'opacity 500ms ease';
+      splash.style.opacity = 0;
+      setTimeout(()=>{splash.style.display='none'; main.style.display='block'; window.scrollTo(0,0)}, 550);
+    });
+
+    function gatherData(){
+      const role = document.getElementById('role').value;
+      const name = document.getElementById('name').value.trim();
+      const year = document.getElementById('year').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const langs = document.getElementById('langs').value.split(',').map(s=>s.trim()).filter(Boolean);
+      const telegram = document.getElementById('telegram').value.trim();
+      const notes = document.getElementById('notes').value.trim();
+      return {role,name,year,address,phone,langs,telegram,notes,submittedAt:new Date().toISOString()};
+    }
+
+    function showMessage(txt,ok=true){
+      result.innerHTML = `<div class="success">${txt}</div>`;
+      setTimeout(()=>{result.innerHTML=''},7000);
+    }
+
+    function openTelegramWithMessage(message){
+      const encoded = encodeURIComponent(message);
+      // 1) try open direct chat with company username (if set)
+      if(COMPANY_TG_USERNAME){
+        const direct = `https://t.me/${COMPANY_TG_USERNAME}?text=${encoded}`;
+        window.open(direct,'_blank');
+        return;
+      }
+      // 2) fallback to share dialog where user chooses chat
+      const share = `https://t.me/share/url?url=&text=${encoded}`;
+      window.open(share,'_blank');
+    }
+
+    sendBtn.addEventListener('click', ()=>{
+      // validation
+      const tg = document.getElementById('telegram').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const role = document.getElementById('role').value;
+      if(!role || !name || !tg){
+        alert('الرجاء تعبئة الحقول المطلوبة: التخصص، الاسم، وحساب التليجرام.');
+        return;
+      }
+
+      const data = gatherData();
+      // compress (URI-safe) using a lightweight routine
+      const compressed = LZString.compressToEncodedURIComponent(JSON.stringify(data));
+      // prepare a short human message and include compressed payload marker
+      const message = `أسود - طلب تقديم\nالاسم: ${data.name}\nالتخصص: ${data.role}\nتليجرام: ${data.telegram}\n\n--BEGIN-COMPRESSED-JSON--\n${compressed}\n--END-COMPRESSED-JSON--`;
+
+      // open telegram with prefilled message (user will press send)
+      openTelegramWithMessage(message);
+
+      showMessage('تم إعداد الرسالة وفتح تليجرام — أرسل الرسالة ليصلك الطلب على تليجرام.');
+    });
+
+    downloadBtn.addEventListener('click', ()=>{
+      const data = gatherData();
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = `aswad_application_${Date.now()}.json`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
